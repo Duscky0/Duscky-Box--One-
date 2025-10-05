@@ -31,7 +31,7 @@
     .hero h1{font-size:40px;line-height:1.01;margin:6px 0;font-weight:700}
     .hero h1 .accent{display:inline-block;color:var(--primary-1);text-shadow:0 10px 40px rgba(109,123,255,0.16)}
     .hero p{max-width:820px;color:var(--muted);font-size:1.03rem;padding:0 10px}
-    .btns{Display:flex;gap:18px;flex-wrap:wrap;justify-content:center;margin-top:16px;z-index:2}
+    .btns{display:flex;gap:18px;flex-wrap:wrap;justify-content:center;margin-top:16px;z-index:2}
     .btn{display:inline-flex;align-items:center;gap:10px;justify-content:center;padding:14px 44px;border-radius:999px;font-weight:700;border:none;cursor:pointer;text-decoration:none;color:#061018;background:linear-gradient(90deg,var(--primary-2),var(--primary-1));box-shadow:0 10px 30px rgba(106,225,190,0.09),0 6px 18px rgba(109,123,255,0.12);transition:transform .26s ease,box-shadow .26s ease;position:relative;overflow:hidden}
     .btn:hover{transform:translateY(-6px);box-shadow:0 20px 60px rgba(106,225,190,0.12),0 12px 40px rgba(109,123,255,0.18)}
     .btn::before{content:"";position:absolute;left:-60%;top:0;width:40%;height:100%;background:linear-gradient(90deg,rgba(255,255,255,0.12),rgba(255,255,255,0.02));transform:skewX(-25deg);transition:all .8s ease;filter:blur(8px)}
@@ -46,16 +46,11 @@
     .card p{color:var(--muted);font-size:.96rem}
     .card a{display:inline-block;margin-top:12px;color:var(--primary-1);text-decoration:none;font-weight:700}
     .card:hover{transform:translateY(-10px);box-shadow:0 30px 80px rgba(12,15,25,0.75)}
-    .link-pill{display:inline-block;padding:10px 16px;border-radius:14px;background:var(--glass);border:1px solid rgba(255,255,255,0.04);font-weight:700;color:var(--text);transition:all .28s;box-shadow:0 6px 30px rgba(109,123,255,0.06)}
-    .link-pill:hover{background:linear-gradient(90deg,rgba(122,114,255,0.10),rgba(122,247,224,0.04));color:#011018;box-shadow:0 18px 60px rgba(106,225,190,0.12);transform:translateY(-6px)}
     footer{padding:36px 18px 80px;text-align:center;color:var(--muted);z-index:2}
-    .socials{margin-top:12px;display:flex;justify-content:center;gap:14px}
-    .socials a{width:46px;height:46px;border-radius:12px;display:inline-grid;place-items:center;background:rgba(255,255,255,0.02);color:var(--text);text-decoration:none;border:1px solid rgba(255,255,255,0.03)}
-    .socials a:hover{box-shadow:0 12px 40px rgba(109,123,255,0.1);transform:translateY(-6px);color:#fff}
     .popup{display:none;position:fixed;inset:0;z-index:2000;align-items:center;justify-content:center;background:linear-gradient(180deg,rgba(0,0,0,0.6),rgba(0,0,0,0.8))}
     .popup-content{width:min(900px,96%);background:linear-gradient(180deg,rgba(6,7,12,0.98),rgba(12,14,20,0.95));border-radius:16px;padding:18px;border:1px solid rgba(255,255,255,0.03);box-shadow:0 40px 120px rgba(2,6,23,0.8)}
-    .popup video{width:100%;height:auto;border-radius:10px;border:0}
-    @media(max-width:720px){header{padding:12px 14px}.hero h1{font-size:30px}.hero p{font-size:.95rem;padding:0 8px}.btn{padding:12px 28px}.popup video{height:auto}.cards{grid-template-columns:1fr}}
+    .popup iframe{width:100%;height:480px;border-radius:10px;border:0}
+    @media(max-width:720px){.popup iframe{height:300px}}
   </style>
 </head>
 <body>
@@ -71,7 +66,7 @@
     </header>
 
     <main>
-      <section class="hero" aria-label="hero">
+      <section class="hero">
         <div class="eyebrow">Feito por estudantes para estudantes</div>
         <h1>Melhores Scripts Para Facilitar o Aprendizado<br> No <span class="accent">Sala Do Futuro!</span></h1>
         <p>Explore nossos scripts exclusivos para otimizar sua experiência na Sala do Futuro!</p>
@@ -80,115 +75,25 @@
           <a href="#" class="btn outline" onclick="openPopup()"><span>Filmes</span></a>
         </div>
       </section>
-
-      <!-- seção Projetos -->
-      <section id="projetos">
-        <h2>Bookmarklets</h2>
-        <div class="cards">
-          <div class="card">
-            <h3>🌳 Acrescentar 500 moedas</h3>
-            <p>Adiciona moedas automaticamente na plataforma da Árvore.</p>
-            <a href="javascript:(function(){alert('500 moedas adicionadas!');})();">Ativar</a>
-          </div>
-          <div class="card">
-            <h3>⚡ Auto Click</h3>
-            <p>Automatiza cliques para agilizar tarefas repetitivas.</p>
-            <a href="javascript:(function(){setInterval(()=>document.body.click(),200);})();">Ativar</a>
-          </div>
-          <div class="card">
-            <h3>🌐 VPN Educacional</h3>
-            <p>Simula acesso desbloqueado para ambiente escolar.</p>
-            <a href="javascript:(function(){alert('VPN Educacional ativada!');})();">Ativar</a>
-          </div>
-          <div class="card">
-            <h3>📝 Redação Paulista</h3>
-            <p>Auxilia no preenchimento de textos automaticamente.</p>
-            <a href="javascript:(function(){alert('Redação Paulista ativa!');})();">Ativar</a>
-          </div>
-          <div class="card">
-            <h3>📚 Tarefas SP</h3>
-            <p>Facilita as atividades do Sala do Futuro.</p>
-            <a href="javascript:(function(){alert('Tarefas SP automatizadas!');})();">Ativar</a>
-          </div>
-          <div class="card">
-            <h3>🌙 Expansão Noturna</h3>
-            <p>Scripts extras para uso em modo escuro.</p>
-            <a href="javascript:(function(){alert('Expansão Noturna ativa!');})();">Ativar</a>
-          </div>
-        </div>
-      </section>
-
-      <section id="links">
-        <h2>Links Úteis</h2>
-        <div class="cards">
-          <div class="card">
-            <h3><i class="fa-brands fa-github"></i> GitHub</h3>
-            <p><a class="link-pill" href="https://github.com/NunesQXQZQA" target="_blank">@NunesQXQZQA</a></p>
-          </div>
-          <div class="card">
-            <h3><i class="fa-brands fa-discord"></i> Discord</h3>
-            <p><span class="link-pill">duscky0</span></p>
-          </div>
-          <div class="card">
-            <h3><i class="fa-solid fa-envelope"></i> Email</h3>
-            <p><a class="link-pill" href="mailto:dusckysuporte@gmail.com">dusckysuporte@gmail.com</a></p>
-          </div>
-        </div>
-      </section>
-
-      <section id="sobre">
-        <h2>Sobre Mim</h2>
-        <p style="text-align:center;max-width:720px;margin:auto;">
-          Sou Nunes, desenvolvedor apaixonado por tecnologia e criatividade.<br>
-          Este site une tudo: meu portfólio, projetos, links e ideias.
-        </p>
-      </section>
     </main>
 
     <footer>
       <div>© 2025 - Nunes Website TV. Todos os direitos reservados.</div>
-      <div class="socials" aria-hidden="true">
-        <a href="https://github.com/NunesQXQZQA" target="_blank"><i class="fa-brands fa-github"></i></a>
-        <a href="#"><i class="fa-brands fa-discord"></i></a>
-        <a href="mailto:dusckysuporte@gmail.com"><i class="fa-solid fa-envelope"></i></a>
-      </div>
     </footer>
   </div>
 
-  <!-- Modal de vídeo -->
+  <!-- Popup de filmes -->
   <div id="popup" class="popup" role="dialog" aria-hidden="true">
     <div class="popup-content">
-      <button class="close" onclick="closePopup()">✕</button>
-      <video id="filmePlayer" controls>
-        <source src="https://drive.google.com/uc?export=download&id=18j56sWIcA_S11VASlBHz6aaAz_PMPVeg" type="video/mp4">
-        Seu navegador não suporta vídeo HTML5.
-      </video>
+      <button onclick="closePopup()" style="float:right;background:transparent;border:none;color:var(--text);font-size:22px;cursor:pointer">✕</button>
+      <!-- 🎥 Player Google Drive -->
+      <iframe src="https://drive.google.com/file/d/18j56sWIcA_S11VASlBHz6aaAz_PMPVeg/preview" allow="autoplay"></iframe>
     </div>
   </div>
 
   <script>
-    function openPopup(){
-      const p = document.getElementById('popup');
-      p.style.display = 'flex';
-      p.setAttribute('aria-hidden', 'false');
-      document.body.style.overflow = 'hidden';
-    }
-
-    function closePopup(){
-      const p = document.getElementById('popup');
-      const video = document.getElementById('filmePlayer');
-      video.pause();
-      p.style.display = 'none';
-      p.setAttribute('aria-hidden','true');
-      document.body.style.overflow = '';
-    }
-
-    window.onclick = function(event) {
-      const p = document.getElementById('popup');
-      if (event.target === p) {
-        closePopup();
-      }
-    };
+    function openPopup(){const p=document.getElementById('popup');p.style.display='flex';p.setAttribute('aria-hidden','false');document.body.style.overflow='hidden'}
+    function closePopup(){const p=document.getElementById('popup');p.style.display='none';p.setAttribute('aria-hidden','true');document.body.style.overflow=''}
   </script>
 </body>
 </html>
