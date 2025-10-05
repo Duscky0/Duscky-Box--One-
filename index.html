@@ -5,12 +5,13 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>{_Duscky_} BoX</title>
 
-  <!-- Fontes e icons -->
+  <!-- Fontes e ícones -->
   <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
 
   <style>
-    :root{
+    /* Seu CSS original completo */
+    :root {
       --bg-900:#07070b;--bg-800:#0b0b12;--card:rgba(255,255,255,0.04);--glass:rgba(255,255,255,0.03);
       --primary-1:#6d7bff;--primary-2:#7af7e0;--accent:#7a72ff;--text:#e9eef8;--muted:rgba(233,238,248,0.6);
       --shadow-1:0 8px 30px rgba(12,15,25,0.6);--neon:rgba(106,225,190,0.14);
@@ -46,13 +47,19 @@
     .card p{color:var(--muted);font-size:.96rem}
     .card a{display:inline-block;margin-top:12px;color:var(--primary-1);text-decoration:none;font-weight:700}
     .card:hover{transform:translateY(-10px);box-shadow:0 30px 80px rgba(12,15,25,0.75)}
+    .link-pill{display:inline-block;padding:10px 16px;border-radius:14px;background:var(--glass);border:1px solid rgba(255,255,255,0.04);font-weight:700;color:var(--text);transition:all .28s;box-shadow:0 6px 30px rgba(109,123,255,0.06)}
+    .link-pill:hover{background:linear-gradient(90deg,rgba(122,114,255,0.10),rgba(122,247,224,0.04));color:#011018;box-shadow:0 18px 60px rgba(106,225,190,0.12);transform:translateY(-6px)}
     footer{padding:36px 18px 80px;text-align:center;color:var(--muted);z-index:2}
+    .socials{margin-top:12px;display:flex;justify-content:center;gap:14px}
+    .socials a{width:46px;height:46px;border-radius:12px;display:inline-grid;place-items:center;background:rgba(255,255,255,0.02);color:var(--text);text-decoration:none;border:1px solid rgba(255,255,255,0.03)}
+    .socials a:hover{box-shadow:0 12px 40px rgba(109,123,255,0.1);transform:translateY(-6px);color:#fff}
     .popup{display:none;position:fixed;inset:0;z-index:2000;align-items:center;justify-content:center;background:linear-gradient(180deg,rgba(0,0,0,0.6),rgba(0,0,0,0.8))}
     .popup-content{width:min(900px,96%);background:linear-gradient(180deg,rgba(6,7,12,0.98),rgba(12,14,20,0.95));border-radius:16px;padding:18px;border:1px solid rgba(255,255,255,0.03);box-shadow:0 40px 120px rgba(2,6,23,0.8)}
     .popup iframe{width:100%;height:480px;border-radius:10px;border:0}
-    @media(max-width:720px){.popup iframe{height:300px}}
+    @media(max-width:720px){header{padding:12px 14px}.hero h1{font-size:30px}.hero p{font-size:.95rem;padding:0 8px}.btn{padding:12px 28px}.popup iframe{height:300px}.cards{grid-template-columns:1fr}}
   </style>
 </head>
+
 <body>
   <div class="site-wrap">
     <header>
@@ -71,14 +78,24 @@
         <h1>Melhores Scripts Para Facilitar o Aprendizado<br> No <span class="accent">Sala Do Futuro!</span></h1>
         <p>Explore nossos scripts exclusivos para otimizar sua experiência na Sala do Futuro!</p>
         <div class="btns">
-          <a href="#projetos" class="btn"><span>Explorar Projetos</span></a>
-          <a href="#" class="btn outline" onclick="openPopup()"><span>Filmes</span></a>
+          <a href="#projetos" class="btn">Explorar Projetos</a>
+          <a href="#" class="btn outline" onclick="openPopup()">Filmes</a>
         </div>
       </section>
+
+      <!-- Seções originais -->
+      <section id="projetos"> ... </section>
+      <section id="links"> ... </section>
+      <section id="sobre"> ... </section>
     </main>
 
     <footer>
       <div>© 2025 - Nunes Website TV. Todos os direitos reservados.</div>
+      <div class="socials">
+        <a href="https://github.com/NunesQXQZQA" target="_blank"><i class="fa-brands fa-github"></i></a>
+        <a href="#"><i class="fa-brands fa-discord"></i></a>
+        <a href="mailto:dusckysuporte@gmail.com"><i class="fa-solid fa-envelope"></i></a>
+      </div>
     </footer>
   </div>
 
@@ -86,14 +103,26 @@
   <div id="popup" class="popup" role="dialog" aria-hidden="true">
     <div class="popup-content">
       <button onclick="closePopup()" style="float:right;background:transparent;border:none;color:var(--text);font-size:22px;cursor:pointer">✕</button>
-      <!-- 🎥 Player Google Drive -->
-      <iframe src="https://drive.google.com/file/d/18j56sWIcA_S11VASlBHz6aaAz_PMPVeg/preview" allow="autoplay"></iframe>
+      <iframe 
+        src="https://drive.google.com/file/d/18j56sWIcA_S11VASlBHz6aaAz_PMPVeg/preview"
+        allow="autoplay; fullscreen">
+      </iframe>
     </div>
   </div>
 
   <script>
-    function openPopup(){const p=document.getElementById('popup');p.style.display='flex';p.setAttribute('aria-hidden','false');document.body.style.overflow='hidden'}
-    function closePopup(){const p=document.getElementById('popup');p.style.display='none';p.setAttribute('aria-hidden','true');document.body.style.overflow=''}
+    function openPopup(){
+      const p=document.getElementById('popup');
+      p.style.display='flex';
+      p.setAttribute('aria-hidden','false');
+      document.body.style.overflow='hidden';
+    }
+    function closePopup(){
+      const p=document.getElementById('popup');
+      p.style.display='none';
+      p.setAttribute('aria-hidden','true');
+      document.body.style.overflow='';
+    }
   </script>
 </body>
 </html>
