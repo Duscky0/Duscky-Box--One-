@@ -1,0 +1,4 @@
+AVISO: Esse vídeo foi feito com o único propósito de ensinar, utilize-o de uma maneira consciente e sem intenções ruins. NÃO ME RESPONSABILIZO CASO VOCÊ DANIFIQUE O COMPUTADOR DA SUA ORGANIZAÇÃO, AO TENTAR INSTALAR QUALQUER TIPO DE SOFTWARE.
+
+Comando utilizado no vídeo (fiquem tranquilos pois esse comando não faz nada de mal ao computador):
+cmd /min /C "set __COMPAT_LAYER=RUNASINVOKER && start "" %1"
